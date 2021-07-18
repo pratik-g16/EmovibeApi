@@ -20,9 +20,7 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 def mget():
     return "hi"
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
+
 class CustomModelPrediction(object):
 
     def __init__(self, model, processor):
