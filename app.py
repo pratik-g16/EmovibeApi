@@ -9,6 +9,18 @@ warnings.filterwarnings('ignore')
 # from tensorflow.keras.preprocessing import text
 
 
+app = Flask(__name__)
+# CORS(app)
+
+
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+
+@app.route('/')
+def mget():
+    return "hi"
+
+
 class CustomModelPrediction(object):
 
     def __init__(self, model, processor):
@@ -73,18 +85,6 @@ def predict_emotion(text_requests):
                 emotion.append([val, tag_encoder.classes_[idx]])
     emotion.sort(reverse=True)
     return emotion[:2]
-
-
-app = Flask(__name__)
-# CORS(app)
-
-
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-
-
-@app.route('/')
-def mget():
-    return "hi"
 
 
 @app.route('/text', methods=['POST'])
