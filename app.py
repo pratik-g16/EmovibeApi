@@ -40,8 +40,8 @@ class CustomModelPrediction(object):
         # with open('C:/Users/HP/Desktop/ProjectSem6/VSC/sentiment-analysis/TextSentimentAnalysis/processor_state.pkl', 'rb') as f:
         # print(os.getcwd())
         model = keras.models.load_model(
-            'sentiment_model.h5')
-        with open('processor_state.pkl', 'rb') as f:
+            'https://github.com/pratik-g16/EmovibeApi/blob/7e2c1d2624d0a070728881d7192f89a7a6178a30/sentiment_model.h5')
+        with open('https://github.com/pratik-g16/EmovibeApi/blob/7e2c1d2624d0a070728881d7192f89a7a6178a30/processor_state.pkl', 'rb') as f:
             processor = pickle.load(f)
         return cls(model, processor)
         # model = keras.models.load_model(
